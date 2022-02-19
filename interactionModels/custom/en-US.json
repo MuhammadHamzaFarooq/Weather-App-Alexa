@@ -1,0 +1,113 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "weather buddy",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi",
+            "hi"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "getWeather_Intent",
+          "slots": [
+            {
+              "name": "cityName",
+              "type": "AMAZON.City",
+              "samples": [
+                "What\u0027s the weather in {cityName}",
+                "{cityName}",
+                "I\u0027d like the wather for {cityName}"
+              ]
+            }
+          ],
+          "samples": [
+            "current temperature",
+            "current weather",
+            " what is the weather",
+            "what\u0027s the weather",
+            "is it cold outside",
+            "is it going to rain",
+            "is it hot outside",
+            "weather in {cityName}",
+            "what\u0027s the temperature in {cityName}",
+            "whats the temperature",
+            "what\u0027s the weather in {cityName}",
+            "hey what\u0027s the weather right now"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "getWeather_Intent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "cityName",
+              "type": "AMAZON.City",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1556121706124.927149577443"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1556121706124.927149577443",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "For what city?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Where would you like the weather for?"
+          },
+          {
+            "type": "PlainText",
+            "value": "I can tell you with the weather for any city. What city are you interested in?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What city\u0027s weather would you like?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "7"
+}
